@@ -1,0 +1,250 @@
+package com.example;
+
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.PrintStream;
+import java.util.Scanner;
+
+public class ejercicios789 {
+
+    // Escribe el código que devuelva una cadena al revés. Por ejemplo, la cadena "hola mundo", debe retornar "odnum aloh".
+    public static class CadenaReves {
+
+       public class Main_1 {
+
+    public static void main(String[] args) {
+        String holaMundo = "Hola Mundo";
+
+        System.out.println(holaMundo);
+
+        System.out.println("Texto invertido: " + reverse(holaMundo));
+        
+         public static String reverse(String holaMundo){
+        String textoReverse = "";
+        for (int i = holaMundo.length() -1; i >= 0; i--){
+            textoReverse = textoReverse + holaMundo.charAt(i);
+
+        }
+        return textoReverse;
+    }
+
+}
+
+    // Crea un array unidimensional de Strings y recórrelo, mostrando únicamente sus valores.
+
+    public static class ArrayUnidimensional {
+
+        public static void main(String[] args) {
+
+        String cosas[] = {
+                "Nevera",
+                "Encimera",
+                "Mesa",
+                "Horno",
+                "Vitroceramica"
+        };
+
+        for ( String cosa : cosas ){
+            System.out.println("Lista de cosas: " + cosa);
+        }
+
+    }
+    }
+
+    // Crea un array bidimensional de enteros y recórrelo, mostrando la posición y el valor de cada elemento en ambas dimensiones.
+
+    public static class ArrayBidimensional {
+
+        public static void main(String[] args) {
+
+            public static void main(String[] args) {
+        int arrayBidi[][] = {
+                {1, 3, 5, 7, 9},
+                {2, 4, 6, 8, 10}
+        };
+
+        for (int i = 0; i < arrayBidi.length; i++) {
+            System.out.println("Valor de i: " + i);
+            for (int j = 0; j < arrayBidi[1].length; j++) {
+                System.out.println("Estoy en i: " + i + ", j = " + j);
+                System.out.println(arrayBidi[i][j]);
+            }
+
+        }
+    }
+    }
+
+    // Crea un "Vector" del tipo de dato que prefieras, y añádele 5 elementos. Elimina el 2o y 3er elemento y muestra el resultado final.
+
+    public static class EjercicioVector {
+
+        public static void main(String[] args) {
+
+            public static void main(String[] args) {
+        // Vector de String
+        Vector<String> vector = new Vector<String>();
+        vector.add("Carolina");
+        vector.add("Daniel");
+        vector.add("Sorin");
+        vector.add("Altair");
+        vector.add("Ezio");
+
+        System.out.println("Datos del vector: " + vector);
+
+        vector.remove(1);
+        vector.trimToSize();
+        vector.remove(1);
+
+        System.out.println("Resultado final: " + vector);
+
+    }
+
+            // Indica cuál es el problema de utilizar un Vector con la capacidad por defecto si tuviésemos 1000 elementos para ser añadidos al mismo.
+
+           Desperdiciamos mucha memoria del sistema, porque cada vez que se sobrepasa el limite establecido la dimension del vector se duplica.
+
+    // Crea un ArrayList de tipo String, con 4 elementos. Cópialo en una LinkedList. Recorre ambos mostrando únicamente el valor de cada elemento.
+    
+    public static class ArrayString {
+
+        public static void main(String[] args) {
+        ArrayList<String> lista = new ArrayList<String>();
+        lista.add("Coche");
+        lista.add("Camion");
+        lista.add("Moto");
+        lista.add("Autobus");
+
+        System.out.println("Imprimir ArrayList: ");
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.println(lista.get(i));
+        }
+
+        LinkedList<String> listaLinked = new LinkedList<String>(lista);
+
+        System.out.println("Imprimir lista Linked: ");
+        for (int i = 0; i < listaLinked.size(); i++) {
+            System.out.println(listaLinked.get(i));
+        }
+    }
+    }
+
+    // Crea un ArrayList de tipo int, y, utilizando un bucle rellénalo con elementos 1..10. A continuación, con otro bucle, recórrelo y elimina los numeros pares. Por último, vuelve a recorrerlo y muestra el ArrayList final. Si te atreves, puedes hacerlo en menos pasos, siempre y cuando cumplas el primer "for" de relleno.
+    
+    public static class ArrayInt {
+
+        public static void main(String[] args) {
+        ArrayList<Integer> secuencia = new ArrayList<Integer>();
+
+        for (int i = 1; i <= 10; i++){
+            if (i%2!=0)
+                secuencia.add(i);
+        }
+        System.out.println("ArrayList: " + secuencia);
+
+        for (int j = 0; j < secuencia.size(); j++){
+            System.out.println(secuencia.get(j));
+        }
+    }
+    }
+
+    // Crea una función DividePorCero. Esta, debe generar una excepción ("throws") a su llamante del tipo ArithmeticException que será capturada por su llamante (desde "main", por ejemplo). Si se dispara la excepción, mostraremos el mensaje "Esto no puede hacerse". Finalmente, mostraremos en cualquier caso: "Demo de código".
+
+    public static class DividePorCero {
+
+      public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduce los números a dividir: ");
+        int numA = scanner.nextInt();
+        int numB = scanner.nextInt();
+
+
+        try {
+            DividePorCero(numA,numB);
+        } catch (ArithmeticException e) {
+            System.out.println("Esto no puede hacerse");
+        } finally {
+            System.out.println("Demo de código");
+        }
+
+    }
+
+    public static float DividePorCero(int numA, int numB) {
+        float resultado = 0;
+
+        try {
+            resultado = numA / numB;
+        } catch (ArithmeticException e){
+            throw new ArithmeticException();
+        }
+        return resultado;
+    }
+
+        }
+
+    // Utilizando InputStream y PrintStream, crea una función que reciba dos parámetros: "fileIn" y "fileOut". La tarea de la función será realizar la copia del fichero dado en el parámetro "fileIn" al fichero dado en "fileOut".
+
+        public static class CopiarFicheros {
+
+              public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String rutaInicio = fileIn();
+
+    
+        System.out.println("Escribe el nombre del fichero: ");
+        String ficheroIn = scanner.next();
+
+        String rutaDestino = fileOut();
+
+        System.out.println("Escribe el nombre del fichero: ");
+        String ficheroOut = scanner.next();
+
+  
+        byte [] contenido = leerFichero(rutaInicio,ficheroIn);
+
+
+        copiarFichero(contenido,rutaDestino,ficheroOut);
+
+    }
+
+    public static String fileIn(){
+        System.out.println("Introduce la ruta del fichero que quieres copiar: ");
+
+        Scanner scanner = new Scanner(System.in);
+        String rutaInicio = scanner.next();
+
+        return rutaInicio;
+    }
+
+    public static String fileOut(){
+        System.out.println("Introduce la ruta de destino : ");
+
+        Scanner scanner = new Scanner(System.in);
+        String rutaDestino = scanner.next();
+
+        return rutaDestino;
+    }
+
+    public static byte[] leerFichero(String rutaInicio, String ficheroIn) {
+        byte[] contenido = null   ;
+        try{
+            InputStream in = new FileInputStream(rutaInicio + "\\"+ficheroIn);
+            contenido = in.readAllBytes();
+        }catch (Exception e){
+            System.out.println("No se encuentra el fichero!!: " + e.getMessage());
+        }
+        return contenido;
+    }
+
+    public static void copiarFichero(byte[] contenido, String rutaDestino, String ficheroOut){
+
+        try{
+            PrintStream out = new PrintStream(rutaDestino + "\\"+ficheroOut);
+            out.write(contenido);
+        }catch (Exception e){
+            System.out.println("Error!!!!:" + e.getMessage());
+        }
+    }
+}
